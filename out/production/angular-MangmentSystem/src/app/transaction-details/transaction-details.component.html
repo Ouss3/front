@@ -1,0 +1,64 @@
+<div class="transaction-details-page">
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <div *ngIf="transactions">
+    <div class="section-card">
+      <h2>Transaction Information</h2>
+      <p>Type : {{ transactions.transactionType }}</p>
+      <p>Status : {{ transactions.transactionStatus }}</p>
+      <p>Description: {{ transactions.description }} </p>
+      <p>Total Price : {{ transactions.totalPrice  | currency }}</p>
+      <p>Total Products : {{ transactions.totalProducts }}</p>
+      <p>Created Date : {{ transactions.createdDate | date: 'medium' }}</p>
+      <div *ngIf="transactions.updatedDate">
+        <p>Updated Date : {{ transactions.updatedDate | date: 'medium' }}</p>
+      </div>
+
+
+    </div>
+
+
+    <div class="section-card">
+      <h2>Product Information</h2>
+      <p>Name : {{ transactions.product.name }}</p>
+      <p>SKU : {{ transactions.product.sku }}</p>
+      <p>Price: {{ transactions.product.price | currency }} </p>
+      <p>Stock Quantity : {{ transactions.product.stockQuantity }}</p>
+      <p>Description : {{ transactions.product.description }}</p>
+      <div *ngIf="transactions.product.imageUrl">
+        <img [src]="transactions.product.imageUrl" [alt]="transactions.product.name" class="product-image"/>
+      </div>
+    </div>
+
+
+    <div class="section-card">
+      <h2>User Information</h2>
+      <p>Name : {{ transactions.user.username }} </p>
+      <p>Phone: {{ transactions.user.email }} </p>
+      <p>Address : {{ transactions.user.phone }}</p>
+      <p>Role : {{ transactions.user.role }}</p>
+
+    </div>
+
+    <div class="section-card" *ngIf="transactions.supplier">
+      <h2>Supplier Information</h2>
+      <p>Name : {{ transactions.supplier.name }}</p>
+      <p>Email : {{ transactions.supplier.address }}</p>
+
+    </div>
+
+    <div class="section-card transaction-status-update">
+      <label for="status">Update Status :</label>
+      <select [(ngModel)]="status" id="status">
+        <option value="PENDING">PENDING</option>
+        <option value="COMPLETED">COMPLETED</option>
+        <option value="CANCELLED">CANCELLED</option>
+        <option value="PROCESSING">PROCESSING</option>
+      </select>
+      <button (click)="handleUpdateTransactionStatus()" class="btn btn-primary">Update Status</button>
+
+    </div>
+
+  </div>
+
+</div>

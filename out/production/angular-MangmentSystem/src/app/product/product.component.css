@@ -1,0 +1,140 @@
+.product-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.product-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e63946;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease-in-out;
+}
+
+.product-header h1:hover {
+  color: #ff6f61;
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.add-product-btn {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #6a1b1d, #e63946);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-product-btn:hover {
+  background: linear-gradient(135deg, #e63946, #ff6f61);
+  transform: translateY(-5px);
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.product-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-info .name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6a1b1d;
+  margin-bottom: 12px;
+}
+
+.product-info .sku,
+.product-info .price,
+.product-info .quantity {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.edit-btn, .delete-btn {
+  padding: 12px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.edit-btn {
+  background: #6a1b1d;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #e63946;
+  transform: translateY(-5px);
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #a5202e;
+  transform: translateY(-5px);
+}
+
+.loading {
+  font-size: 1.6rem;
+  color: #6a1b1d;
+  text-align: center;
+  margin-top: 70px;
+}

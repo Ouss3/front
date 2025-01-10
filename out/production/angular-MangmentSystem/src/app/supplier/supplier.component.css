@@ -1,0 +1,131 @@
+.supplier-page {
+  padding: 20px;
+  background-color: #f8f9fa; /* Light gray background for contrast */
+  color: #1c1e21; /* Dark gray text for readability */
+}
+
+.supplier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spread items for better layout */
+  margin-bottom: 30px;
+  margin-left: 10px;
+  color: #e63946; /* Vibrant red for the header text */
+}
+
+.supplier-header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.supplier-header button {
+  padding: 12px 20px;
+  background-color: #e63946; /* Vibrant red button */
+  font-size: 16px;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.supplier-header button:hover {
+  background-color: #ff6f61; /* Coral red on hover */
+  transform: translateY(-2px);
+}
+
+.add-sup {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.supplier-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.supplier-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  margin: 10px 0;
+  font-size: 18px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  color: #495057; /* Neutral gray for item text */
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.supplier-item:hover {
+  background-color: #ffefef; /* Light red hover effect */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.supplier-actions button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.supplier-actions button:first-child {
+  background-color: #e63946; /* Red for primary actions */
+  color: #ffffff;
+}
+
+.supplier-actions button:first-child:hover {
+  background-color: #ff6f61; /* Coral red on hover */
+  transform: translateY(-2px);
+}
+
+.supplier-actions button:last-child {
+  background-color: #6a1b1d; /* Deep red for secondary actions */
+  color: #ffffff;
+}
+
+.supplier-actions button:last-child:hover {
+  background-color: #922b2d; /* Slightly lighter deep red on hover */
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .supplier-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .supplier-header button {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .supplier-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .supplier-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .supplier-actions button {
+    width: auto;
+    flex-grow: 1;
+    text-align: center;
+  }
+}

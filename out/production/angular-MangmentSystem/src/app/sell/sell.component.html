@@ -1,0 +1,27 @@
+<div class="purchase-form-page">
+  <p *ngIf="message" class="message">{{ message }}</p>
+  <h1>Sell Product</h1>
+
+  <form (ngSubmit)="handleSubmit()">
+    <div class="form-group">
+      <label for="pro">Select Product</label>
+      <select name="productId" class="form-control" [(ngModel)]="productId" id="pro">
+        <option value="">Select a product</option>
+        <option *ngFor="let product of products" [value]="product.id">{{ product.name }}</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="number" placeholder="Quantity" [(ngModel)]="quantity" name="quantity" id="quantity" required/>
+    </div>
+    <div class="form-group">
+      <label for="des">Description</label>
+      <input type="text" placeholder="Description" [(ngModel)]="description" name="desvription" id="des" required/>
+    </div>
+    <button type="submit" class="btn btn-primary">Sell Product</button>
+
+
+  </form>
+</div>

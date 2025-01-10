@@ -1,0 +1,35 @@
+/* Global styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+}
+
+button {
+  padding: 12px 18px; /* Slightly larger padding for better usability */
+  font-size: 15px; /* Slightly larger text for readability */
+  background-color: #e63946; /* Vibrant red for primary button color */
+  color: #ffffff; /* White text for contrast */
+  font-weight: 700; /* Slightly lighter font for a modern look */
+  border-radius: 6px; /* Softer corners for buttons */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #b22833; /* Slightly darker red for hover state */
+  transform: scale(1.05); /* Subtle zoom effect for interactivity */
+}
+
+.message {
+  background-color: #fdecea; /* Light pink background for gentle feedback */
+  color: #c82333; /* Deep red text for emphasis */
+  padding: 12px; /* Adjusted padding for visual balance */
+  border-radius: 6px; /* Softer corners for consistency */
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px; /* Standard text size for messages */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}

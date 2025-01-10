@@ -1,0 +1,65 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px; /* Add consistent spacing between buttons */
+}
+
+.pagination-button {
+  background-color: #6a1b1d; /* Sidebar base color */
+  color: #ffffff;
+  padding: 12px 18px;
+  margin: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px; /* Rounded corners for a modern look */
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.pagination-button:hover {
+  background-color: #e63946; /* Accent hover color */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.pagination-button.active {
+  background-color: #e63946; /* Accent color for active state */
+  color: #ffffff;
+  font-weight: bold;
+  transform: scale(1.05); /* Slight enlargement for active button */
+}
+
+.pagination-button:disabled {
+  background-color: rgba(230, 57, 70, 0.5); /* Muted version of accent color */
+  color: rgba(255, 255, 255, 0.7); /* Faded text color for disabled buttons */
+  cursor: not-allowed;
+  box-shadow: none; /* Remove shadow for disabled state */
+}
+
+.pagination-button:disabled:hover {
+  transform: none; /* Disable hover effect for disabled buttons */
+}
+
+/* Add subtle hover animation for container */
+.pagination-container:hover .pagination-button {
+  transition-delay: 0.1s; /* Slight delay for smooth appearance */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pagination-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}

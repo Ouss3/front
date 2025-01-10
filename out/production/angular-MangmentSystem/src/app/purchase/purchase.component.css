@@ -1,0 +1,138 @@
+.purchase-form-page {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa, #eaeaea);
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+  transform: translateY(-10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purchase-form-page:hover {
+  transform: translateY(0);
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.purchase-form-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e63946;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  animation: colorPulse 2s infinite;
+}
+
+.purchase-form-page .form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.purchase-form-page .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #6a1b1d;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.purchase-form-page .form-group label:hover {
+  color: #e63946;
+}
+
+.purchase-form-page .form-group input,
+.purchase-form-page .form-group select,
+.purchase-form-page .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #1c1e21;
+  font-size: 1rem;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purchase-form-page .form-group input:focus,
+.purchase-form-page .form-group select:focus,
+.purchase-form-page .form-group textarea:focus {
+  border-color: #e63946;
+  box-shadow: 0px 0px 8px rgba(230, 57, 70, 0.3);
+  outline: none;
+}
+
+.purchase-form-page .form-group textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.purchase-form-page .form-group input[type="submit"] {
+  background-color: #e63946;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.purchase-form-page .form-group input[type="submit"]:hover {
+  background-color: #ff6f61;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    color: #e63946;
+  }
+  50% {
+    color: #ff6f61;
+  }
+}
+
+@media (max-width: 768px) {
+  .purchase-form-page {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .purchase-form-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .purchase-form-page .form-group input,
+  .purchase-form-page .form-group select,
+  .purchase-form-page .form-group textarea {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .purchase-form-page {
+    padding: 10px;
+  }
+
+  .purchase-form-page h1 {
+    font-size: 1.2rem;
+  }
+
+  .purchase-form-page .form-group label {
+    font-size: 0.9rem;
+  }
+}

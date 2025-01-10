@@ -1,0 +1,10 @@
+{
+  "/product-image": {
+    "target": "http://localhost:5000",
+    "pathRewrite": {
+      "^/product-image": ""
+    },
+    "changeOrigin": true,
+    "secure": false
+  }
+}

@@ -1,0 +1,34 @@
+services: # Définition des services (conteneurs)
+  service_name: # Nom du service
+    image: image_name:tag  # Spécifie l'image Docker à utiliser pour créer le conteneur.
+    container_name: container_name  # Définit un nom personnalisé pour le conteneur.
+    build: # Si un Dockerfile est utilisé, cette option permet de construire l'image.
+      context: ./path/to/context  # Répertoire du contexte de construction
+      dockerfile: Dockerfile  # Nom du Dockerfile (par défaut Dockerfile)
+      args: # Arguments passés lors de la construction de l'image
+        build_arg_name: value
+    command: "command_to_run"  # Commande à exécuter au démarrage du conteneur
+    ports: #  Redirige les ports de l'hôte vers le conteneur.
+      - 8080:80 # host_port:container_port
+    environment: # Définit des variables d'environnement dans le conteneur
+      - ENV_VAR=value
+    env_file: # Fichier contenant les variables d'environnement
+      - ./env_file.env
+    restart: always # Politique de redémarrage pour les services
+    healthcheck: # Définition d'une vérification de santé pour le service
+      test: [ "CMD", "curl", "-f", "http://localhost" ]  # Test de santé (commande)
+      interval: 30s  # Intervalle entre les vérifications
+      retries: 3  # Nombre de tentatives avant d'indiquer une erreur
+    volumes: # Permet de partager des fichiers entre l'hôte et le conteneur ou entre les conteneurs.
+      - ./host_path:/container_path
+    networks: # Associe le service à un ou plusieurs réseaux Docker.
+      - network_name
+    depends_on: # Spécifie les services qui doivent être démarrés avant ce service.
+      - another_service
+
+volumes: # Volumes partagés (définir des volumes persistants)
+  volume_name: { }
+
+networks: # Définir des réseaux
+  network_name: #  réseaux permettent aux conteneurs de communiquer entre eux de manière sécurisée.
+    driver: bridge  # Type de réseau (bridge, host, etc.)
