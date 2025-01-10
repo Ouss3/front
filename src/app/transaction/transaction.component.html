@@ -1,1 +1,47 @@
-<p>transaction works!</p>
+<div class="transaction-page">
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <div class="transactions-header">
+    <h1>Transactions</h1>
+    <div class="transaction-search">
+      <input type="text" [(ngModel)]="searchInput" placeholder="Search Transaction ..">
+      <button (click)="handleSearch()">Search</button>
+    </div>
+  </div>
+
+  <div *ngIf="trasactions.length>0">
+    <table class="transactions-table">
+      <thead>
+      <tr>
+        <th>TYPE</th>
+        <th>STATUS</th>
+        <th>TOTAL PRICE</th>
+        <th>TOTAL PRODUCTS</th>
+        <th>DATE</th>
+        <th>ACTIONS</th>
+      </tr>
+
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let transaction of trasactions">
+        <td>{{ transaction.transactionType }}</td>
+        <td>{{ transaction.transactionStatus }}</td>
+        <td>{{ transaction.totalPrice }}</td>
+        <td>{{ transaction.totalProducts }}</td>
+        <td>{{ (transaction.updatedDate || transaction.createdDate) | date: 'medium' }}</td>
+
+        <td (click)="navigateToTransactionDeatilsPage(transaction.id)">
+          <button>View Details</button>
+        </td>
+      </tbody>
+    </table>
+  </div>
+
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChange)="onPageChange($event)">
+
+  </app-pagination>
+</div>
